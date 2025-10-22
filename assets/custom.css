@@ -33,3 +33,65 @@ body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetic
   .split-landing{ grid-template-columns:1fr; }
   .panel img{ height:46vh; }
 }
+
+.split-screen {
+  display: flex;
+  height: 100vh;           /* full height */
+  overflow: hidden;
+}
+
+.side {
+  flex: 1;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: flex 0.4s ease;
+}
+
+.side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease, filter .3s ease;
+}
+
+.side .overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .3s ease, background .3s ease;
+}
+
+.side:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.side:hover .overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.55);
+}
+
+.side.left:hover { flex: 1.2; }
+.side.right:hover { flex: 1.2; }
+
+.overlay h2 {
+  font-size: clamp(24px, 4vw, 48px);
+  margin: 0;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 900px) {
+  .split-screen { flex-direction: column; height: auto; }
+  .side { height: 50vh; }
+}
+
