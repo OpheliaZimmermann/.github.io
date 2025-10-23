@@ -62,14 +62,14 @@
     <main>
       <div class="container py-5 py-lg-0">
         <div class="row align-items-start">
-          <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0 clickable" onclick="location.href='statistics/'">
+          <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0 clickable" onclick="location.href='statistics/index.md'">
             <div data-aos="fade-up" class="display-4 mb-2"><strong><span style="font-size: 90%;">Data Science</span></strong><div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div></div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
               Spécialisée en analyse de données biomédicales et comportementales, j'utilise mon savoir-faire pour donner du sens aux données, à travers des outils statistiques éprouvés et des approches de machine learning adaptées.
             </div>
           </div>
 
-          <div class="col-12 col-lg-6 ps-lg-5 pt-5 pt-lg-0 clickable" onclick="location.href='photography/'">
+          <div class="col-12 col-lg-6 ps-lg-5 pt-5 pt-lg-0 clickable" onclick="location.href='photography/index.md'">
             <div data-aos="fade-up" class="display-4 mb-2">Photographie</div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
               La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière, les regards et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité plutôt que la perfection, pour raconter ce que les mots ne disent pas toujours.
