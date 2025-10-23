@@ -11,7 +11,6 @@
     <!-- AOS (fade-up) -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <!-- Fonts (optionnel) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +20,6 @@
       html, body { height: 100%; }
       body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); }
 
-      /* Bandeaux d'arrière-plan (gauche/droite) */
       .position-absolute-expand { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       .kapp-holder { min-height: 100%; }
       .kapp-holder-m1 { background: var(--bg1); }
@@ -42,17 +40,25 @@
 
       .image-section { position: relative; z-index: 1; text-align: center; padding: 80px 0 40px; }
       .image-section img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+
+      /* Ajout de zones cliquables */
+      .clickable {
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.2s ease;
+      }
+      .clickable:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+      }
     </style>
   </head>
   <body>
 
-    <!-- Arrière-plan -->
     <div class="row position-absolute-expand">
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m1"><div data-app="background" class="kapp"></div></div>
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m2"><div data-app="background" class="kapp"></div></div>
     </div>
 
-    <!-- Section image -->
     <section class="image-section keditable keditable-auto">
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -63,21 +69,20 @@
       </div>
     </section>
 
-    <!-- Contenu principal -->
     <main>
       <div class="container py-5 py-lg-0">
         <div class="row align-items-start">
-          <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0">
+          <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0 clickable" onclick="location.href='statistics/index.md'">
             <div data-aos="fade-up" class="display-4 mb-2"><strong><span style="font-size: 90%;">Data Science</span></strong><div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div></div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
-              Spécialisée en analyse de données biomédicales et comportementales, j'utilise mon savoir‑faire pour donner du sens aux données, à travers des outils statistiques éprouvés et des approches de machine learning adaptées.
+              Spécialisée en analyse de données biomédicales et comportementales, j'utilise mon savoir-faire pour donner du sens aux données, à travers des outils statistiques éprouvés et des approches de machine learning adaptées.
             </div>
           </div>
 
-          <div class="col-12 col-lg-6 ps-lg-5 pt-5 pt-lg-0">
+          <div class="col-12 col-lg-6 ps-lg-5 pt-5 pt-lg-0 clickable" onclick="location.href='photography/index.md'">
             <div data-aos="fade-up" class="display-4 mb-2">Photographie</div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
-              La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière, les regards et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité plutôt que la perfection, pour raconter ce que les mots ne disent pas toujours.
+              La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière, les regards et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité plutôt que la perfection, pour raconter ce que les mots ne disent pas toujours.
             </div>
           </div>
         </div>
