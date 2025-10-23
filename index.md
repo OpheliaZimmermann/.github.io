@@ -63,7 +63,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col col-md-8 text-center">
-            <img src="assets/photos/image.jpg" alt="Visuel principal" data-aos="fade-up" />
+            <img src="assets/photos/image.png" alt="Visuel principal" data-aos="fade-up" />
           </div>
         </div>
       </div>
