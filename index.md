@@ -13,12 +13,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+
 
     <style>
       :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
       html, body { height: 100%; margin: 0; padding: 0; }
       body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); overflow-x: hidden; }
+      body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
       .position-absolute-expand { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       .kapp-holder { min-height: 100%; }
