@@ -28,31 +28,40 @@
       .kapp-holder-m2 { background: var(--bg2); }
       .row.position-absolute-expand > [class*="col-"] { padding: 0; }
 
-      /* Empilement sur mobile : les 2 couleurs l'une sous l'autre */
       @media (max-width: 991.98px) {
         .row.position-absolute-expand { display: grid; grid-template-rows: 50vh 50vh; }
         .row.position-absolute-expand .col-12 { height: 50vh; }
       }
 
-      /* Contenu au-dessus du fond */
       main { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; }
 
-      /* Petites aides visuelles */
       .display-4 { font-weight: 700; letter-spacing: .2px; }
       .leadish { font-size: 22px; line-height: 1.55; }
-
-      /* Optionnel : des séparations invisibles qui laissent de l'air */
       .pe-lg-5 { padding-right: 3rem !important; }
       .ps-lg-5 { padding-left: 3rem !important; }
+
+      .image-section { position: relative; z-index: 1; text-align: center; padding: 80px 0 40px; }
+      .image-section img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
     </style>
   </head>
   <body>
 
-    <!-- Arrière-plan en 2 colonnes, sans menu ni pied -->
+    <!-- Arrière-plan -->
     <div class="row position-absolute-expand">
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m1"><div data-app="background" class="kapp"></div></div>
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m2"><div data-app="background" class="kapp"></div></div>
     </div>
+
+    <!-- Section image -->
+    <section class="image-section keditable keditable-auto">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col col-md-8 text-center">
+            <img src="assets/photos/image.jpg" alt="Visuel principal" data-aos="fade-up" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Contenu principal -->
     <main>
@@ -75,7 +84,6 @@
       </div>
     </main>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HoA7YJQ5WDaFSC5U9n1K6bIYQz3sR2qN9c2b8w5Jt2oJw8zJ7nQn9v1+9Wtr1J1N" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script> AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' }); </script>
