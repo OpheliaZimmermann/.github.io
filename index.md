@@ -1,171 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projets — Sweet &amp; Co.</title>
-  <meta name="description" content="Les projets de Sweet &amp; Co." />
-
-  <!-- Minimal, self-contained styles (no CDNs, no images) -->
+  <title>Réglages – Corps de page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    :root{
-      --c1:#1c3144; /* bleu foncé */
-      --c2:#618cc5; /* bleu clair */
-      --text:#222;
-      --muted:#6b7280;
-      --bg:#f8f9fa;
-      --maxw: 1000px;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      color: var(--text);
-      background: #fff;
-      line-height: 1.6;
-    }
-    a { color: var(--c1); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
-
-    header {
-      background: var(--c1);
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 0;
-    }
-    .brand { font-weight: 700; letter-spacing: .3px; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap; }
-    nav a {
-      display: inline-block; padding: 10px 14px; border-radius: 6px; color: #fff;
-      text-transform: uppercase; font-size: 14px; letter-spacing: .4px;
-    }
-    nav a:hover, nav a.active { background: rgba(255,255,255,.12); }
-
-    main { padding: 40px 0; background: var(--bg); }
-    h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      color: var(--c1);
-      margin: 0 0 8px 0;
-      line-height: 1.2;
-      text-align: center;
-    }
-    .sep { width: 100px; height: 4px; margin: 12px auto 32px; background: var(--c1); border-radius: 2px; }
-
-    .content { display: grid; grid-template-columns: 1fr; gap: 32px; }
-    .lead { font-size: 18px; color: var(--text); }
-
-    ol.projects { font-size: 20px; margin: 0; padding-left: 22px; }
-    ol.projects li { margin: 10px 0; }
-    ol.projects li strong { color: var(--c2); }
-
-    footer { background: var(--bg); border-top: 1px solid #e5e7eb; }
-    .footer-inner { padding: 32px 0; display: grid; grid-template-columns: 1fr; gap: 24px; }
-    .footer-brand { font-weight: 700; color: var(--c1); }
-    .muted { color: var(--muted); }
-
-    .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-    .footer-links h5 { margin: 0 0 8px; color: var(--c1); font-size: 16px; }
-    .footer-links ul { list-style: none; margin: 0; padding: 0; }
-    .footer-links li { margin: 6px 0; }
-
-    .footer-bottom {
-      border-top: 1px solid #e5e7eb; padding: 16px 0; display: flex; gap: 12px;
-      align-items: center; justify-content: space-between; flex-wrap: wrap;
-    }
-    .social { display: inline-flex; gap: 12px; }
-    .social a { color: var(--c1); font-weight: 600; }
+    html,body{background:#f7f7f9}
+    .page{max-width:1100px;margin:40px auto;padding:24px;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px}
+    .koMenuSectionTitle{font-weight:600;margin:24px 0 12px}
+    .form-label{font-weight:500}
+    .hint{font-size:.9rem;color:#6c757d}
   </style>
 </head>
 <body>
+  <main class="page">
+    <h1 class="h4 mb-4">Réglages d’apparence (corps de page uniquement)</h1>
 
-  <!-- Header / Menu -->
-  <header>
-    <div class="container header-inner">
-      <div class="brand">Sweet &amp; Co.</div>
-      <nav aria-label="Menu principal">
-        <ul>
-          <li><a href="https://sweetandco.ch">Home</a></li>
-          <li><a class="active" href="./projets.html">Projets</a></li>
-          <li><a href="https://sweetandco.ch/ressources">Ressources</a></li>
-          <li><a href="https://sweetandco.ch/team">Team</a></li>
-          <li><a href="https://sweetandco.ch/nous-soutenir">Nous soutenir</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <div class="row g-4">
 
-  <!-- Main -->
-  <main>
-    <div class="container">
-      <h1>Projets</h1>
-      <div class="sep" aria-hidden="true"></div>
+      <!-- Colonne 1 -->
+      <div class="col-12 col-lg-6">
+        <div class="koMenuSectionTitle">Propriétés du texte</div>
 
-      <div class="content">
-        <section class="lead">
-          <ol class="projects">
-            <li>
-              <a href="./formulaire-bingo.html">Grand BINGO du diabète</a>
-            </li>
-            <li>
-              <strong>Des ateliers Do-It-Yourself</strong><br />
-              On prévoit d'organiser des ateliers pour démocratiser l'usage des techs et surtout s'amuser.
-              Différents jeux vous seront également proposés.
-            </li>
-            <li>
-              <strong>Soutien technique</strong><br />
-              Si vous souhaitez une aide technique ponctuelle pour l'usage des applications open-source,
-              n’hésitez pas à nous contacter. On fera de notre mieux pour vous aiguiller dans les limites de nos compétences.
-            </li>
-          </ol>
-        </section>
+        <div class="mb-3">
+          <label for="txtColor" class="form-label">Couleur du texte</label>
+          <input type="color" class="form-control form-control-color" id="txtColor" value="#222222" title="Choisir une couleur">
+        </div>
+
+        <div class="koMenuSectionTitle">Arrière-plan</div>
+        <div class="mb-3">
+          <label for="bgColor" class="form-label">Couleur d'arrière-plan</label>
+          <input type="color" class="form-control form-control-color" id="bgColor" value="#ffffff" title="Choisir une couleur">
+        </div>
+
+        <div class="koMenuSectionTitle">Bordure</div>
+        <div class="row g-3">
+          <div class="col-6">
+            <label for="borderWidth" class="form-label">Largeur de bordure</label>
+            <div class="input-group input-group-sm">
+              <input type="number" class="form-control" id="borderWidth" min="0" max="20" step="1" value="0">
+              <span class="input-group-text">px</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="borderRadius" class="form-label">Rayon</label>
+            <div class="input-group input-group-sm">
+              <input type="number" class="form-control" id="borderRadius" min="0" max="50" step="1" value="0">
+              <span class="input-group-text">px</span>
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="borderColor" class="form-label">Couleur de la bordure</label>
+            <input type="color" class="form-control form-control-color" id="borderColor" value="#dddddd" title="Choisir une couleur">
+          </div>
+        </div>
       </div>
+
+      <!-- Colonne 2 (états : hover / accent 2, etc.) -->
+      <div class="col-12 col-lg-6">
+        <div class="koMenuSectionTitle">État : survol (hover)</div>
+        <div class="mb-3">
+          <label for="txtColorHover" class="form-label">Couleur du texte (hover)</label>
+          <input type="color" class="form-control form-control-color" id="txtColorHover" value="#000000">
+        </div>
+        <div class="mb-3">
+          <label for="bgColorHover" class="form-label">Couleur d'arrière-plan (hover)</label>
+          <input type="color" class="form-control form-control-color" id="bgColorHover" value="#f2f2f2">
+        </div>
+        <div class="mb-3">
+          <label for="borderColorHover" class="form-label">Couleur de la bordure (hover)</label>
+          <input type="color" class="form-control form-control-color" id="borderColorHover" value="#cccccc">
+        </div>
+
+        <div class="koMenuSectionTitle">Accent #2</div>
+        <div class="mb-3">
+          <label for="acc2Text" class="form-label">Couleur du texte (accent #2)</label>
+          <input type="color" class="form-control form-control-color" id="acc2Text" value="#ffffff">
+        </div>
+        <div class="mb-3">
+          <label for="acc2Bg" class="form-label">Couleur d’arrière-plan (accent #2)</label>
+          <input type="color" class="form-control form-control-color" id="acc2Bg" value="#007bff">
+        </div>
+        <div class="mb-3">
+          <label for="acc2Border" class="form-label">Couleur de la bordure (accent #2)</label>
+          <input type="color" class="form-control form-control-color" id="acc2Border" value="#007bff">
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="d-flex gap-2">
+      <button id="apply" class="btn btn-primary">Appliquer au bloc d’exemple</button>
+      <button id="reset" class="btn btn-outline-secondary">Réinitialiser</button>
+    </div>
+
+    <p class="hint mt-3">Astuce : cette page ne contient ni barre de menu ni pied de page – uniquement le corps.</p>
+
+    <div id="preview" class="mt-4 p-4 border rounded">
+      <strong>Bloc d’exemple</strong>
+      <p class="mb-0">Survolez ce bloc pour tester les couleurs “hover”.</p>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-brand">Sweet &amp; Co.</div>
-        <div class="muted">contact@sweetandco.ch</div>
-      </div>
+  <script>
+    const els = {
+      txtColor: txtColor,
+      bgColor: bgColor,
+      borderWidth: borderWidth,
+      borderRadius: borderRadius,
+      borderColor: borderColor,
+      txtColorHover: txtColorHover,
+      bgColorHover: bgColorHover,
+      borderColorHover: borderColorHover,
+      acc2Text: acc2Text,
+      acc2Bg: acc2Bg,
+      acc2Border: acc2Border,
+      preview: document.getElementById('preview'),
+      apply: document.getElementById('apply'),
+      reset: document.getElementById('reset')
+    };
 
-      <div class="footer-links">
-        <div>
-          <h5>Main menu</h5>
-          <ul>
-            <li><a href="https://sweetandco.ch/">Home</a></li>
-            <li><a href="./projets.html">Projets</a></li>
-            <li><a href="https://sweetandco.ch/ressources">Ressources</a></li>
-            <li><a href="https://sweetandco.ch/team">Team</a></li>
-            <li><a href="https://sweetandco.ch/nous-soutenir">Nous soutenir</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="https://sweetandco.ch/mentions-legales">Mentions légales</a></li>
-            <li><a href="https://sweetandco.ch/politique-de-confidentialite">Politique de confidentialité</a></li>
-            <li><a href="https://sweetandco.ch/nos-statuts">Nos Statuts</a></li>
-          </ul>
-        </div>
-      </div>
+    function applyStyles() {
+      const p = els.preview.style;
+      p.color = els.txtColor.value;
+      p.background = els.bgColor.value;
+      p.borderWidth = (parseInt(els.borderWidth.value)||0) + 'px';
+      p.borderStyle = 'solid';
+      p.borderColor = els.borderColor.value;
+      p.borderRadius = (parseInt(els.borderRadius.value)||0) + 'px';
+    }
 
-      <div class="footer-bottom">
-        <div class="muted">Copyright ©2025 — All rights reserved.</div>
-        <div class="social">
-          <a href="https://instagram.com/_sweet_and_co._" target="_blank" rel="noopener">Instagram</a>
-          <span>•</span>
-          <a href="mailto:contact@sweetandco.ch">Email</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    function setHover() {
+      const base = {
+        color: els.txtColor.value,
+        background: els.bgColor.value,
+        borderColor: els.borderColor.value
+      };
+      const hover = {
+        color: els.txtColorHover.value,
+        background: els.bgColorHover.value,
+        borderColor: els.borderColorHover.value
+      };
+      els.preview.onmouseenter = () => {
+        els.preview.style.color = hover.color;
+        els.preview.style.background = hover.background;
+        els.preview.style.borderColor = hover.borderColor;
+      };
+      els.preview.onmouseleave = () => {
+        els.preview.style.color = base.color;
+        els.preview.style.background = base.background;
+        els.preview.style.borderColor = base.borderColor;
+      };
+    }
 
+    els.apply.addEventListener('click', () => { applyStyles(); setHover(); });
+    els.reset.addEventListener('click', () => { document.querySelector('form')?.reset(); location.reload(); });
+
+    // init
+    applyStyles(); setHover();
+  </script>
 </body>
 </html>
