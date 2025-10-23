@@ -17,8 +17,8 @@
 
     <style>
       :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
-      html, body { height: 100%; }
-      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); }
+      html, body { height: 100%; margin: 0; padding: 0; }
+      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); overflow-x: hidden; }
 
       .position-absolute-expand { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       .kapp-holder { min-height: 100%; }
@@ -38,18 +38,11 @@
       .pe-lg-5 { padding-right: 3rem !important; }
       .ps-lg-5 { padding-left: 3rem !important; }
 
-      .image-section { position: relative; z-index: 1; text-align: center; padding: 80px 0 40px; }
-      .image-section img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+      .image-section { position: relative; z-index: 1; width: 100%; margin: 0; padding: 0; }
+      .image-section img { width: 100%; height: auto; display: block; border: none; border-radius: 0; box-shadow: none; }
 
-      /* Ajout de zones cliquables */
-      .clickable {
-        cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.2s ease;
-      }
-      .clickable:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 24px rgba(0,0,0,0.4);
-      }
+      .clickable { cursor: pointer; transition: transform 0.15s ease, box-shadow 0.2s ease; }
+      .clickable:hover { transform: translateY(-4px); box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
     </style>
   </head>
   <body>
@@ -59,14 +52,9 @@
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m2"><div data-app="background" class="kapp"></div></div>
     </div>
 
+    <!-- Image pleine largeur -->
     <section class="image-section keditable keditable-auto">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col col-md-8 text-center">
-            <img src="assets/photos/image.png" alt="Visuel principal" data-aos="fade-up" />
-          </div>
-        </div>
-      </div>
+      <img src="assets/photos/image.png" alt="Visuel principal" data-aos="fade-up" />
     </section>
 
     <main>
