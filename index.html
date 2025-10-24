@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+  
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,6 +14,29 @@
 
     <!-- Police Manrope -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    @supports (height: 100svh) {.hero-art { height: 100svh; }}
+    @supports (height: 100dvh) {.hero-art { height: 100dvh; }}
+
+html, body { height: -webkit-fill-available; }
+.hero-art  { min-height: -webkit-fill-available; }
+
+@media (max-width: 768px) {
+  .hero-art{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .display-4 { font-size: 28px; line-height: 1.2; }
+  .leadish   { font-size: 18px; }
+  .pe-lg-5, .ps-lg-5 { padding-left: 0 !important; padding-right: 0 !important; }
+  .pb-5.pb-lg-0 { padding-bottom: 1.25rem !important; }
+}
+
+@media (hover: none) {
+  .clickable:hover { background-color: transparent; }
+}
+</style>
 
     <style>
       :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
@@ -56,7 +80,7 @@
     <!-- FULL-BLEED PHOTO (uses your actual PNG) -->
 <section class="hero-art keditable keditable-auto"
          style="position:relative; z-index:1; width:100vw; height:100svh; margin:0; padding:0; overflow:hidden;
-                background:url('assets/Ophelia Zimmermann.svg') center/cover no-repeat;">
+                background:url('assets/photos/OutOfFocus.svg') center/cover no-repeat;">
 </section>
 
 <!-- Fallback for older iOS (no svh) -->
