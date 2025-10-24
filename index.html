@@ -15,56 +15,56 @@
     <!-- Police Manrope -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-    @supports (height: 100svh) {.hero-art { height: 100svh; }}
-    @supports (height: 100dvh) {.hero-art { height: 100dvh; }}
+  :root { --bg1:#001F3F; --bg2:#17A2B8; --text:#fff; }
+  html, body { height:100%; margin:0; padding:0; }
+  body { font-family:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#0b0f14; color:var(--text); overflow-x:hidden; }
 
-html, body { height: -webkit-fill-available; }
-.hero-art  { min-height: -webkit-fill-available; }
+  .position-absolute-expand { position:fixed; inset:0; z-index:0; }
+  .kapp-holder { min-height:100%; }
+  .kapp-holder-m1 { background:var(--bg1); }
+  .kapp-holder-m2 { background:var(--bg2); }
+  .row.position-absolute-expand > [class*="col-"] { padding:0; }
 
-@media (max-width: 768px) {
-  .hero-art{
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  @media (max-width:991.98px){
+    .row.position-absolute-expand { display:grid; grid-template-rows:50vh 50vh; }
+    .row.position-absolute-expand .col-12 { height:50vh; }
   }
-  .display-4 { font-size: 28px; line-height: 1.2; }
-  .leadish   { font-size: 18px; }
-  .pe-lg-5, .ps-lg-5 { padding-left: 0 !important; padding-right: 0 !important; }
-  .pb-5.pb-lg-0 { padding-bottom: 1.25rem !important; }}
 
-@media (hover: none) {
-  .clickable:hover { background-color: transparent; }}
+  main { position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; }
+
+  .display-4 { font-weight:600; letter-spacing:.1px; }
+  .leadish { font-size:22px; line-height:1.55; }
+  .pe-lg-5 { padding-right:3rem !important; }
+  .ps-lg-5 { padding-left:3rem !important; }
+
+  .hero-art { position:relative; z-index:1; width:100vw; height:100vh; margin:0; padding:0; overflow:hidden; }
+  .hero-svg { width:100%; height:100%; display:block; }
+
+  .clickable { cursor:pointer; transition:background-color .3s ease; background-color:transparent; }
+  .clickable:hover { background-color:rgba(255,255,255,.08); }
+
+  /* --- Mobile-only height overrides (must come AFTER the base .hero-art rule) --- */
+  @supports (height:100svh){ .hero-art { height:100svh !important; } }
+  @supports (height:100dvh){ .hero-art { height:100dvh !important; } }
+  html, body { height:-webkit-fill-available; }
+  .hero-art  { min-height:-webkit-fill-available; }
+
+  /* Mobile typography/margins, desktop unchanged */
+  @media (max-width:768px){
+    .hero-art{
+      background-position:center center;
+      background-size:cover;
+      background-repeat:no-repeat;
+    }
+    .display-4 { font-size:28px; line-height:1.2; }
+    .leadish   { font-size:18px; }
+    .pe-lg-5, .ps-lg-5 { padding-left:0 !important; padding-right:0 !important; }
+    .pb-5.pb-lg-0 { padding-bottom:1.25rem !important; }
+  }
+
+  @media (hover:none){ .clickable:hover { background-color:transparent; } }
 </style>
 
-    <style>
-      :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
-      html, body { height: 100%; margin: 0; padding: 0; }
-      body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); overflow-x: hidden; }
-
-      .position-absolute-expand { position: fixed; inset: 0; z-index: 0; }
-      .kapp-holder { min-height: 100%; }
-      .kapp-holder-m1 { background: var(--bg1); }
-      .kapp-holder-m2 { background: var(--bg2); }
-      .row.position-absolute-expand > [class*="col-"] { padding: 0; }
-
-      @media (max-width: 991.98px) {
-        .row.position-absolute-expand { display: grid; grid-template-rows: 50vh 50vh; }
-        .row.position-absolute-expand .col-12 { height: 50vh; }
-      }
-
-      main { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; }
-
-      .display-4 { font-weight: 600; letter-spacing: .1px; }
-      .leadish { font-size: 22px; line-height: 1.55; }
-      .pe-lg-5 { padding-right: 3rem !important; }
-      .ps-lg-5 { padding-left: 3rem !important; }
-
-      .hero-art { position: relative; z-index: 1; width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden; }
-      .hero-svg { width: 100%; height: 100%; display: block; }
-
-      .clickable { cursor: pointer; transition: background-color 0.3s ease; background-color: transparent; }
-      .clickable:hover { background-color: rgba(255, 255, 255, 0.08); }
-    </style>
   </head>
   <body>
 
@@ -77,16 +77,11 @@ html, body { height: -webkit-fill-available; }
     <!-- SVG transparent inversion -->
     <!-- FULL-BLEED PHOTO (uses your actual PNG) -->
 <section class="hero-art keditable keditable-auto"
-         style="position:relative; z-index:1; width:100vw; height:100svh; margin:0; padding:0; overflow:hidden;
-                background:url('assets/photos/OutOfFocus.svg') center/cover no-repeat;">
+         style="background:url('assets/photos/OutOfFocus.svg') center/cover no-repeat;">
 </section>
 
 <!-- Fallback for older iOS (no svh) -->
-<style>
-@supports not (height: 100svh) {
-  .hero-art { height: 100vh !important; }
-}
-</style>
+
 
 
     <main>
