@@ -55,7 +55,7 @@
     <!-- SVG transparent inversion -->
     <section class="hero-art keditable keditable-auto">
       <!-- Use the PNG as a mask: outside = #f8f9fa, inside the PNG shape = transparent -->
-      <svg class="hero-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="hero-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <filter id="toLuma" color-interpolation-filters="sRGB">
         <feColorMatrix type="matrix" values="
@@ -66,8 +66,7 @@
       </filter>
 
       <mask id="imgCut" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:luminance">
-        <rect width="100%" height="100%" fill="white"/>
-        <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+        <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
                href="assets/photos/image.png" xlink:href="assets/photos/image.png" filter="url(#toLuma)"/>
       </mask>
     </defs>
