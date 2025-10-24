@@ -16,87 +16,32 @@
 
     <style>
       :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
-
       html, body { height: 100%; margin: 0; padding: 0; }
-      body {
-        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        background: #0b0f14;
-        color: var(--text);
-        overflow-x: hidden;
-      }
+      body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); overflow-x: hidden; }
 
-      /* Fond bicolore gauche/droite */
-      .position-absolute-expand {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-      }
-      .kapp-holder {
-        min-height: 100%;
-      }
-      .kapp-holder-m1 {
-        background: var(--bg1);
-      }
-      .kapp-holder-m2 {
-        background: var(--bg2);
-      }
-      .row.position-absolute-expand > [class*="col-"] {
-        padding: 0;
-      }
+      .position-absolute-expand { position: fixed; inset: 0; z-index: 0; }
+      .kapp-holder { min-height: 100%; }
+      .kapp-holder-m1 { background: var(--bg1); }
+      .kapp-holder-m2 { background: var(--bg2); }
+      .row.position-absolute-expand > [class*="col-"] { padding: 0; }
 
       @media (max-width: 991.98px) {
-        .row.position-absolute-expand {
-          display: grid;
-          grid-template-rows: 50vh 50vh;
-        }
-        .row.position-absolute-expand .col-12 {
-          height: 50vh;
-        }
+        .row.position-absolute-expand { display: grid; grid-template-rows: 50vh 50vh; }
+        .row.position-absolute-expand .col-12 { height: 50vh; }
       }
 
-      main {
-        position: relative;
-        z-index: 1;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
+      main { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; }
 
       .display-4 { font-weight: 600; letter-spacing: .1px; }
       .leadish { font-size: 22px; line-height: 1.55; }
       .pe-lg-5 { padding-right: 3rem !important; }
       .ps-lg-5 { padding-left: 3rem !important; }
 
-      /* IMAGE plein écran */
-      .image-section {
-        position: relative;
-        z-index: 1;
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      .image-section img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-      }
+      .hero-art { position: relative; z-index: 1; width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden; }
+      .hero-svg { width: 100%; height: 100%; display: block; }
 
-      /* Survol plus clair */
-      .clickable {
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        background-color: transparent;
-      }
-      .clickable:hover {
-        background-color: rgba(255, 255, 255, 0.08);
-      }
+      .clickable { cursor: pointer; transition: background-color 0.3s ease; background-color: transparent; }
+      .clickable:hover { background-color: rgba(255, 255, 255, 0.08); }
     </style>
   </head>
   <body>
@@ -107,19 +52,35 @@
       <div class="col-12 col-lg-6 kapp-holder kapp-holder-m2"><div data-app="background" class="kapp"></div></div>
     </div>
 
-    <!-- Image plein écran -->
-    <section class="image-section keditable keditable-auto">
-      <img src="assets/photos/image.png" alt="Visuel principal" data-aos="fade-up" />
+    <!-- SVG transparent inversion -->
+    <section class="hero-art keditable keditable-auto">
+      <!-- Use the PNG as a mask: outside = #f8f9fa, inside the PNG shape = transparent -->
+      <svg class="hero-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="toLuma" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.2126 0.7152 0.0722 0 0
+          0.2126 0.7152 0.0722 0 0
+          0.2126 0.7152 0.0722 0 0
+          0.2126 0.7152 0.0722 0 0" />
+      </filter>
+
+      <mask id="imgCut" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:luminance">
+        <rect width="100%" height="100%" fill="white"/>
+        <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+               href="assets/photos/image.png" xlink:href="assets/photos/image.png" filter="url(#toLuma)"/>
+      </mask>
+    </defs>
+
+    <rect width="100%" height="100%" fill="#f8f9fa" mask="url(#imgCut)"/>
+  </svg>
     </section>
 
     <main>
       <div class="container py-5 py-lg-0">
         <div class="row align-items-start">
           <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0 clickable" onclick="location.href='statistics/'">
-            <div data-aos="fade-up" class="display-4 mb-2">
-              <strong><span style="font-size: 90%;">Data Science</span></strong>
-              <div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div>
-            </div>
+            <div data-aos="fade-up" class="display-4 mb-2"><strong><span style="font-size: 90%;">Data Science</span></strong><div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div></div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
               Spécialisée en analyse de données biomédicales et comportementales, j'utilise mon savoir-faire pour donner du sens aux données, à travers des outils statistiques éprouvés et des approches de machine learning adaptées.
             </div>
@@ -137,8 +98,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
-    </script>
+    <script> AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' }); </script>
   </body>
 </html>
