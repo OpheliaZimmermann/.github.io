@@ -16,13 +16,51 @@
 
     <style>
       :root { --bg1: #001F3F; --bg2: #17A2B8; --text: #fff; }
+
       html, body { height: 100%; margin: 0; padding: 0; }
-      body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0b0f14; color: var(--text); overflow-x: hidden; }
+      body {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: #0b0f14;
+        color: var(--text);
+        overflow-x: hidden;
+      }
 
-      /* Masquer le fond bicolore derrière l'image */
-      .position-absolute-expand { display: none; }
+      /* Fond bicolore gauche/droite */
+      .position-absolute-expand {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+      }
+      .kapp-holder {
+        min-height: 100%;
+      }
+      .kapp-holder-m1 {
+        background: var(--bg1);
+      }
+      .kapp-holder-m2 {
+        background: var(--bg2);
+      }
+      .row.position-absolute-expand > [class*="col-"] {
+        padding: 0;
+      }
 
-      main { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; }
+      @media (max-width: 991.98px) {
+        .row.position-absolute-expand {
+          display: grid;
+          grid-template-rows: 50vh 50vh;
+        }
+        .row.position-absolute-expand .col-12 {
+          height: 50vh;
+        }
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
 
       .display-4 { font-weight: 600; letter-spacing: .1px; }
       .leadish { font-size: 22px; line-height: 1.55; }
@@ -30,20 +68,44 @@
       .ps-lg-5 { padding-left: 3rem !important; }
 
       /* IMAGE plein écran */
-      .image-section { position: relative; z-index: 1; width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden; }
-      .image-section img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; border: none; border-radius: 0; box-shadow: none; }
+      .image-section {
+        position: relative;
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .image-section img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
 
+      /* Survol plus clair */
       .clickable {
         cursor: pointer;
         transition: background-color 0.3s ease;
         background-color: transparent;
       }
       .clickable:hover {
-        background-color: rgba(255,255,255,0.08);
+        background-color: rgba(255, 255, 255, 0.08);
       }
     </style>
   </head>
   <body>
+
+    <!-- Fond bicolore -->
+    <div class="row position-absolute-expand">
+      <div class="col-12 col-lg-6 kapp-holder kapp-holder-m1"><div data-app="background" class="kapp"></div></div>
+      <div class="col-12 col-lg-6 kapp-holder kapp-holder-m2"><div data-app="background" class="kapp"></div></div>
+    </div>
 
     <!-- Image plein écran -->
     <section class="image-section keditable keditable-auto">
@@ -54,7 +116,10 @@
       <div class="container py-5 py-lg-0">
         <div class="row align-items-start">
           <div class="col-12 col-lg-6 pe-lg-5 pb-5 pb-lg-0 clickable" onclick="location.href='statistics/'">
-            <div data-aos="fade-up" class="display-4 mb-2"><strong><span style="font-size: 90%;">Data Science</span></strong><div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div></div>
+            <div data-aos="fade-up" class="display-4 mb-2">
+              <strong><span style="font-size: 90%;">Data Science</span></strong>
+              <div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div>
+            </div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
               Spécialisée en analyse de données biomédicales et comportementales, j'utilise mon savoir-faire pour donner du sens aux données, à travers des outils statistiques éprouvés et des approches de machine learning adaptées.
             </div>
@@ -63,7 +128,7 @@
           <div class="col-12 col-lg-6 ps-lg-5 pt-5 pt-lg-0 clickable" onclick="location.href='photography/'">
             <div data-aos="fade-up" class="display-4 mb-2">Photographie</div>
             <div data-aos="fade-up" class="leadish text-justify" style="text-align: justify;">
-              La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité d'un regard ou d'un visage.
+              La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité d'un visage ou d'un regard.
             </div>
           </div>
         </div>
@@ -72,6 +137,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script> AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' }); </script>
+    <script>
+      AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+    </script>
   </body>
 </html>
