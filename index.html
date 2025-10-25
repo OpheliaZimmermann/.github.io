@@ -98,6 +98,25 @@
       opacity:0; transition:opacity .35s ease;
       mix-blend-mode:screen; pointer-events:none;
     }
+    /* Mirror the glow so both fade toward the center (desktop only) */
+@media (min-width: 992px) {
+  /* LEFT column: push glow to the right (toward the middle) */
+  .equal-panels > .col-12.col-lg-6:first-child .panel::before {
+    background: radial-gradient(circle at 30% 10%,
+      rgba(255,255,255,.18) 0%,
+      rgba(255,255,255,.08) 35%,
+      rgba(255,255,255,0) 70%);
+  }
+
+  /* RIGHT column: pull glow to the left (toward the middle) */
+  .equal-panels > .col-12.col-lg-6:nth-child(2) .panel::before {
+    background: radial-gradient(circle at 70% 10%,
+      rgba(255,255,255,.18) 0%,
+      rgba(255,255,255,.08) 35%,
+      rgba(255,255,255,0) 70%);
+  }
+}
+
     .panel:hover::before{ opacity:1; }
     .panel:hover{ transform:translateY(-2px); }
 
@@ -128,7 +147,7 @@
         <div class="col-12 col-lg-6">
           <div class="panel" onclick="location.href='FocusData/'">
             <div class="title-wrap" data-aos="fade-up">
-              <div class="display-4">
+              <div class="display-3">
                 <strong><span style="font-size: 90%;">Data Science</span></strong>
                 <div><strong><span style="font-size: 90%;">Analyse de données</span></strong></div>
               </div>
@@ -143,7 +162,7 @@
         <div class="col-12 col-lg-6">
           <div class="panel" onclick="location.href='FocusFoto/'">
             <div class="title-wrap" data-aos="fade-up">
-              <div class="display-4">Photographie</div>
+              <div class="display-3">Photographie</div>
             </div>
             <div class="leadish" data-aos="fade-up" style="text-align: justify;">
               La photographie est pour moi une autre façon d’explorer l’humain ; par la lumière et les gestes du quotidien. J’aime capturer la spontanéité et la sincérité d'un visage ou d'un regard.
