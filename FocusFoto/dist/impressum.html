@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Focus Foto</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Focus Foto</div>
+        <div class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./about_me.html">About</a>
+          <a href="./contact.html" aria-current="page">Contact</a>
+          <a href="./impressum.html">Impressum</a>
+          <a href="./privacy.html">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Let’s plan your shoot</h1>
+    <p class="lead">Tell me a bit about you and what you have in mind.</p>
+
+    <section class="section grid-2">
+      <div class="card">
+        <!-- NOTE: GitHub Pages has no backend. The form below opens the user's email client. 
+             Replace the email with your own. For advanced handling, use a service like Formspree or Netlify Forms. -->
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="Name" type="text" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="date">Preferred date</label>
+              <input id="date" name="Preferred date" type="date" />
+            </div>
+            <div>
+              <label for="location">Location</label>
+              <input id="location" name="Location" type="text" placeholder="Zurich, Bern, etc." />
+            </div>
+          </div>
+
+          <div>
+            <label for="type">Project type</label>
+            <input id="type" name="Project type" type="text" placeholder="Portrait / Couple / Event / Editorial…" />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" placeholder="What’s the vibe? Any references or notes?" required></textarea>
+            <p class="helper">By sending, you agree to the <a href="./privacy.html">Privacy Policy</a>.</p>
+          </div>
+
+          <div>
+            <button class="btn primary" type="submit">Send email</button>
+            <a class="btn" href="mailto:you@example.com">Or email directly</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Contact</div>
+        <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a><br />
+           <strong>Instagram:</strong> <a href="https://instagram.com/" target="_blank" rel="noopener">instagram.com/yourhandle</a><br />
+           <strong>Location:</strong> Zurich, Switzerland</p>
+
+        <div class="kicker">Availability</div>
+        <p class="muted">Weekdays & selected weekends. Happy to travel across CH.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © Ophelia Zimmermann — All rights reserved · <a href="./impressum.html">Impressum</a> · <a href="./privacy.html">Privacy</a>
+    </div>
+  </footer>
+</body>
+</html>
