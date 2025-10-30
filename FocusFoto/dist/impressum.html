@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Focus Foto</title>
+  <title>Impressum — Focus Foto</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -12,81 +12,38 @@
       <nav>
         <div class="brand">Focus Foto</div>
         <div class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./about_me.html">About</a>
-          <a href="./contact.html" aria-current="page">Contact</a>
-          <a href="./impressum.html">Impressum</a>
-          <a href="./privacy.html">Privacy</a>
+          <a href="../index.html">Home</a>
+          <a href="../dist/about_me.html">About</a>
+          <a href="../dist/contact.html">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>Let’s plan your shoot</h1>
-    <p class="lead">Tell me a bit about you and what you have in mind.</p>
+    <h1>Impressum</h1>
+    <div class="card">
+      <div class="definition"><strong>Responsible entity</strong><div>Ophelia Zimmermann<br/>Focus Foto</div></div>
+      <div class="definition"><strong>Address</strong><div>Street &amp; No.<br/>8000 Zurich<br/>Switzerland</div></div>
+      <div class="definition"><strong>Email</strong><div><a href="mailto:you@example.com">you@example.com</a></div></div>
+      <div class="definition"><strong>Phone</strong><div>+41 (0) __ ___ __ __</div></div>
+      <div class="definition"><strong>UID / VAT</strong><div>CHE-xxx.xxx.xxx</div></div>
+    </div>
 
-    <section class="section grid-2">
-      <div class="card">
-        <!-- NOTE: GitHub Pages has no backend. The form below opens the user's email client. 
-             Replace the email with your own. For advanced handling, use a service like Formspree or Netlify Forms. -->
-        <form action="mailto:you@example.com" method="post" enctype="text/plain">
-          <div class="form-row">
-            <div>
-              <label for="name">Your name</label>
-              <input id="name" name="Name" type="text" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="Email" type="email" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="date">Preferred date</label>
-              <input id="date" name="Preferred date" type="date" />
-            </div>
-            <div>
-              <label for="location">Location</label>
-              <input id="location" name="Location" type="text" placeholder="Zurich, Bern, etc." />
-            </div>
-          </div>
-
-          <div>
-            <label for="type">Project type</label>
-            <input id="type" name="Project type" type="text" placeholder="Portrait / Couple / Event / Editorial…" />
-          </div>
-
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" placeholder="What’s the vibe? Any references or notes?" required></textarea>
-            <p class="helper">By sending, you agree to the <a href="./privacy.html">Privacy Policy</a>.</p>
-          </div>
-
-          <div>
-            <button class="btn primary" type="submit">Send email</button>
-            <a class="btn" href="mailto:you@example.com">Or email directly</a>
-          </div>
-        </form>
-      </div>
-
-      <div class="card">
-        <div class="kicker">Contact</div>
-        <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a><br />
-           <strong>Instagram:</strong> <a href="https://instagram.com/" target="_blank" rel="noopener">instagram.com/yourhandle</a><br />
-           <strong>Location:</strong> Zurich, Switzerland</p>
-
-        <div class="kicker">Availability</div>
-        <p class="muted">Weekdays & selected weekends. Happy to travel across CH.</p>
-      </div>
+    <section class="section card">
+      <div class="kicker">Disclaimer</div>
+      <p>All content on this website was created with care. Nevertheless, we cannot guarantee the accuracy, completeness or timeliness of the content. Liability claims against the author due to material or immaterial damage resulting from access, use or non-use of published information are excluded.</p>
+      <p>Links to external websites are outside our responsibility. Access and use of such websites is at the user’s own risk.</p>
+      <p>Copyright © Ophelia Zimmermann. All images and texts are protected by copyright and may not be used without permission.</p>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © Ophelia Zimmermann — All rights reserved · <a href="./impressum.html">Impressum</a> · <a href="./privacy.html">Privacy</a>
-    </div>
-  </footer>
+  <div class="container">
+    © Ophelia Zimmermann — All rights reserved · 
+    <a href="../dist/impressum.html">Impressum</a> · 
+    <a href="../dist/privacy.html">Privacy</a>
+  </div>
+</footer>
 </body>
 </html>
